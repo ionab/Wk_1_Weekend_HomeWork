@@ -71,44 +71,44 @@ class TestPetShop < Minitest::Test
         name: "Camelot of Pets"
       }
   end
-
+#1
   def test_pet_shop_name
     name = pet_shop_name(@pet_shop) #this is an instance variable. Making this available to the test.
     assert_equal("Camelot of Pets", name)
   end
-
+#2
   def test_total_cash
     sum = total_cash(@pet_shop)
     assert_equal(1000, sum)
   end
-
+#3
   def test_add_or_remove_cash__add
     add_or_remove_cash(@pet_shop,10)
     cash = total_cash(@pet_shop)
     assert_equal(1010, cash)
   end
-
+#4
   def test_add_or_remove_cash__remove
     add_or_remove_cash(@pet_shop,-10)
     cash = total_cash(@pet_shop)
     assert_equal(990, cash)
   end
-
+#5
   def test_pets_sold
     sold = pets_sold(@pet_shop)
     assert_equal(0, sold)
   end
-
+#6
   def test_increase_pets_sold
     increase_pets_sold(@pet_shop,2)
     sold = pets_sold(@pet_shop)
     assert_equal(2, sold)
   end
-
-  # def test_stock_count
-  #   count = stock_count(@pet_shop)
-  #   assert_equal(6, count)
-  # end
+#7
+  def test_stock_count
+    count = stock_count(@pet_shop)
+    assert_equal(6, count)
+  end
 
   # def test_all_pets_by_breed__found
   #   pets = pets_by_breed(@pet_shop, "British Shorthair")
