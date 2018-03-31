@@ -113,8 +113,11 @@ end
 #you remove the pet from the pet shop inventory
 #you increase the number of pets sold
 #you add the cash from the sale to your bank
+#what happens if the pet the customer wants to buy doesn't exist
+#so argument pet needs to not equal nil
+#so update your if statement so pet needs to be true to proceed
 def sell_pet_to_customer(pet_shop, pet, customer)
-  if customer_can_afford_pet(customer, pet)
+  if !pet.nil? && customer_can_afford_pet(customer, pet)
     add_pet_to_customer(customer, pet)
     customer[:cash] -= pet[:price]
     remove_pet_by_name(pet_shop, pet)
