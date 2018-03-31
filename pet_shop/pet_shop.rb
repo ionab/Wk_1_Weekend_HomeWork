@@ -117,7 +117,7 @@ end
 #so argument pet needs to not equal nil
 #so update your if statement so pet needs to be true to proceed
 def sell_pet_to_customer(pet_shop, pet, customer)
-  if !pet.nil? && customer_can_afford_pet(customer, pet)
+  if !pet.nil? && customer_can_afford_pet(customer, pet) #basically enter if true
     add_pet_to_customer(customer, pet)
     customer[:cash] -= pet[:price]
     remove_pet_by_name(pet_shop, pet)
