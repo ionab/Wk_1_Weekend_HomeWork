@@ -32,7 +32,7 @@ pets = []
     end
   end
   return pets
-  return 0
+  return 0 #tthis line here will never do anything   - remove
 end
 
 def find_pet_by_name(pet_shop, pet_name)
@@ -47,7 +47,7 @@ end
 def remove_pet_by_name(pet_shop, pet_name)
   for pet in pet_shop[:pets]
     if pet[:name] == pet_name
-    pet.delete(:name)
+    pet.delete(:name) #remove pet not the name
     end
   end
 end
@@ -117,7 +117,7 @@ end
 #so argument pet needs to not equal nil
 #so update your if statement so pet needs to be true to proceed
 def sell_pet_to_customer(pet_shop, pet, customer)
-  if !pet.nil? && customer_can_afford_pet(customer, pet) #basically enter if true
+  if !pet.nil? && customer_can_afford_pet(customer, pet) #basically enter if true # could refractor this to  if pet != nil 
     add_pet_to_customer(customer, pet)
     customer[:cash] -= pet[:price]
     remove_pet_by_name(pet_shop, pet)
